@@ -1,3 +1,6 @@
+
+import java.util.HashMap;
+
 /*
  * @lc app=leetcode id=1 lang=java
  *
@@ -7,17 +10,13 @@
 // @lc code=start
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int [] ans = new int[2];
+        HashMap <Integer, Integer> valueMap = new HashMap<>();
         for(int x=0; x < nums.length; x++){
-            for(int y=x+1; y < nums.length; y++){
-                if (nums[x]+nums[y] == target){
-                    ans[0] = x;
-                    ans[1] = y;
-                    return ans;
-                }
-            }
+            int difference = target - nums[x];
+            if(valueMap.containsKey(difference)) return new int[]{valueMap.get(difference),x}; 
+            valueMap.put(nums[x], x);
         }
-        return null;
+        throw new IllegalArgumentException("No two sum solution");
     }
 
     public static void main(String[] args){
