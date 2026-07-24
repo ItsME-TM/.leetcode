@@ -1,3 +1,16 @@
 .vscode/
 node_modules/
 
+# .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.vspscc
+*.vssscc
+*.pidb
+*.svdlog
+*.dll
+*.exe
+*.pdb
+*.xml
